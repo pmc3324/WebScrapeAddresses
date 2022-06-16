@@ -25,8 +25,6 @@ driver.get(url)
 button_click = WebDriverWait(driver, 10).until(
     EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Accept Settings')]"))).click()
 
-
-
 addressing = driver.find_elements(By.XPATH, "//*[@id='side_bar']/a")
 
 filename = 'whole_foods_addresses2.csv'
@@ -41,12 +39,6 @@ for address in addressing:
         (By.CSS_SELECTOR, "div[style = 'width: 250px;']"))).text
     storages.append(addresses)
 
-
-address = []
-city_state_zip = []
-phone_number = []
-phone_number_otherstuff = []
-store_hours = []
 for storage in storages:
     cleaned = storage.split('\n')
     address_city_state_zip = cleaned[1]
